@@ -1,0 +1,76 @@
+﻿@model CollegeManagement.MVC.Models.vmSubjectPagedList
+
+@{
+    ViewBag.Title = Model.PageTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var rowIndex = ((Model.SubjectPagedList.CurrentPage - 1) * Model.SubjectPagedList.PageSize) + 1;
+}
+<style>
+    .askiran-list-table th.table-number {
+        width: 5px;
+    }
+
+    .askiran-list-table th.table-subject {
+        width: 150px;
+    }
+
+    .askiran-list-table th.table-button {
+        width: 10px;
+    }
+</style>
+<div class="askiran-block">
+    <div class="askiran-block-title"><a class="new-item-link" href=@Url.Action("/Create")>Create New Subject<i class="fa"></i></a><i class="fa list"></i>@Model.PageTitle</div>
+    <div class="askiran-list-table">
+        @if (Model.SystemMessage != null)
+        {
+            @Html.Partial("Partials/_SystemMessage", Model.SystemMessage)
+        }
+        <form id="pagedListFilter" method="post">
+            @if (Model.SubjectPagedList.Count > 0)
+            {
+                if (Model.Pager.TotalPage > 1)
+                {
+                    @Html.Partial("Partials/Pager", Model.Pager)
+                }
+                <table>
+                    <tr>
+                        <th class="table-number">#</th>
+                        <th class="table-subject">Course Name</th>
+                        <th class="table-subject">Subject Name</th>
+                        <th class="table-button">&nbsp;</th>
+                        <th class="table-button">&nbsp;</th>
+                    </tr>
+                    @foreach (var item in Model.SubjectPagedList)
+                    {
+                <tr>
+                    <td class="table-number">@(rowIndex++)</td>
+                    <td class="table-subject">@item.CourseName</td>
+                    <td class="table-subject">@item.SubjectName</td>
+                    <td>
+                        <div>
+                            <a class="item-detail" href='@Url.Action("Detail", new { id = @item.SubjectID })'><i class="fa"></i></a>
+                            <div class="info-tooltip ask-tooltip-detail" style="left:85px"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <a onclick="DeleteItemFromList(@item.SubjectID)" class="item-delete"><i class="fa"></i></a>
+                            <div class="info-tooltip ask-tooltip-delete" style="left:85px"></div>
+                        </div>
+                    </td>
+                </tr>
+                    }
+                </table>
+                if (Model.Pager.TotalPage > 1)
+                {
+                    @Html.Partial("Partials/Pager", Model.Pager)
+
+                }
+            }
+            else
+            {
+                <div class="ask-dialog info" lang="fa"><i class="fa"></i>Empty List</div>
+            }
+        </form>
+    </div>
+</div>

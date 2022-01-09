@@ -1,0 +1,86 @@
+﻿@model  CollegeManagement.MVC.Models.Pager
+
+<div class="askiran-paging row">
+    <div class="col-md-6">
+        <div class="out-object">
+            <div class="paging-info">Page :@Html.DisplayFor(m => m.CurrentPage)</div><div class="paging-info">Total Count:@Html.DisplayFor(m => m.TotalCount)</div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="out-object">
+            <div ID="p_holder" class="paging-items">
+                @if (Model.TotalPage < 9)
+                {
+                    for (int i = 1; i <= Model.TotalPage; i++)
+                    {
+                        if (i == Model.CurrentPage)
+                        {
+                            <a>@i</a>
+                        }
+                        else
+                        {
+                            <a onclick="PageLinkAction('@Url.Action(Model.ActionUrl)',@i)" class="UnselectItem">@i</a>
+                        }
+                    }
+                }
+                else
+                {
+                    if (Model.CurrentPage <= 4)
+                    {
+                        int len = Model.CurrentPage <= 2 ? 4 : (Model.CurrentPage + 2);
+                        for (int i = 1; i <= len; i++)
+                        {
+                            if (i == Model.CurrentPage)
+                            {
+                                <a>@i</a>
+                            }
+                            else
+                            {
+                                <a onclick="PageLinkAction('@Url.Action(Model.ActionUrl)',@i)" class="UnselectItem">@i</a>
+                            }
+                        }
+                        <i class="paging-dots">...</i>
+                        <a onclick="PageLinkAction('@Url.Action(Model.ActionUrl)',@Model.TotalPage)" class="UnselectItem">@Model.TotalPage</a>
+                    }
+                    else if (Model.CurrentPage + 3 >= Model.TotalPage)
+                    {
+                        int len = Model.CurrentPage + 2 >= Model.TotalPage ? 3 : (Model.TotalPage - Model.CurrentPage + 2);
+                        <a onclick="PageLinkAction('@Url.Action(Model.ActionUrl)',1)" class="UnselectItem">1</a>
+
+                        <i class="paging-dots">...</i>
+                        for (int i = Model.TotalPage - len; i <= Model.TotalPage; i++)
+                        {
+                            if (i == Model.CurrentPage)
+                            {
+                                <a>@i</a>
+                            }
+                            else
+                            {
+                                <a onclick="PageLinkAction('@Url.Action(Model.ActionUrl)',@i)" class="UnselectItem">@i</a>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <a onclick="PageLinkAction('@Url.Action(Model.ActionUrl)',1)" class="UnselectItem">1</a>
+                        <i class="paging-dots">...</i>
+
+                        for (int i = Model.CurrentPage - 2; i <= Model.CurrentPage + 2; i++)
+                        {
+                            if (i == Model.CurrentPage)
+                            {
+                                <a>@i</a>
+                            }
+                            else
+                            {
+                                <a onclick="PageLinkAction('@Url.Action(Model.ActionUrl)',@i)" class="UnselectItem">@i</a>
+                            }
+                        }
+                        <i class="paging-dots">...</i>
+                        <a onclick="PageLinkAction('@Url.Action(Model.ActionUrl)',@Model.TotalPage)" class="UnselectItem">@Model.TotalPage</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>

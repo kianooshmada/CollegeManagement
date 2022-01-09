@@ -1,0 +1,66 @@
+﻿@model CollegeManagement.MVC.Models.vmCourseListReport
+
+@{
+    ViewBag.Title = Model.PageTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var rowIndex = ((Model.CourseList.CurrentPage - 1) * Model.CourseList.PageSize) + 1;
+}
+<style>
+    .askiran-list-table th.table-number {
+        width: 5px;
+    }
+
+    .askiran-list-table th.table-subject {
+        width: 150px;
+    }
+
+    .askiran-list-table th.table-button {
+        width: 10px;
+    }
+</style>
+<div class="askiran-block">
+    <div class="askiran-block-title"><i class="fa list"></i>@Model.PageTitle</div>
+    <div class="askiran-list-table">
+        @if (Model.SystemMessage != null)
+        {
+            @Html.Partial("Partials/_SystemMessage", Model.SystemMessage)
+        }
+        <form id="pagedListFilter" method="post">
+            @if (Model.CourseList.Count > 0)
+            {
+                if (Model.Pager.TotalPage > 1)
+                {
+                    @Html.Partial("Partials/Pager", Model.Pager)
+                }
+                <table>
+                    <tr>
+                        <th class="table-number">#</th>
+                        <th class="table-subject">Course Name</th>
+                        <th class="table-subject">Teachers Count</th>
+                        <th class="table-subject">Students Count</th>
+                        <th class="table-subject">Grade Average</th>
+                    </tr>
+                    @foreach (var item in Model.CourseList)
+                    {
+                <tr>
+                    <td class="table-number">@(rowIndex++)</td>
+                    <td class="table-subject">@item.Name</td>
+                    <td class="table-subject">@item.TeachersCount</td>
+                    <td class="table-subject">@item.StudentsCount</td>
+                    <td class="table-subject">@item.GradeAvg</td>
+                </tr>
+                    }
+                </table>
+                if (Model.Pager.TotalPage > 1)
+                {
+                    @Html.Partial("Partials/Pager", Model.Pager)
+
+                }
+            }
+            else
+            {
+                <div class="ask-dialog info" lang="fa"><i class="fa"></i>Empty List</div>
+            }
+        </form>
+    </div>
+</div>

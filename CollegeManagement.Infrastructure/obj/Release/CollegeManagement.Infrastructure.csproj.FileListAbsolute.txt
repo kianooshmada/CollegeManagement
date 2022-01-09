@@ -1,0 +1,17 @@
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\bin\Release\CollegeManagement.Infrastructure.dll.config
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\bin\Release\CollegeManagement.Infrastructure.dll
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\bin\Release\CollegeManagement.Infrastructure.pdb
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\bin\Release\CollegeManagement.Core.dll
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\bin\Release\EntityFramework.dll
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\bin\Release\EntityFramework.SqlServer.dll
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\bin\Release\CollegeManagement.Core.pdb
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\bin\Release\EntityFramework.xml
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\bin\Release\EntityFramework.SqlServer.xml
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\obj\Release\CollegeManagement.Infrastructure.csprojAssemblyReference.cache
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\obj\Release\CollegeManagement.Infrastructure.Migrations.update1.resources
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\obj\Release\CollegeManagement.Infrastructure.Migrations.update2.resources
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\obj\Release\CollegeManagement.Infrastructure.csproj.GenerateResource.cache
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\obj\Release\CollegeManagement.Infrastructure.csproj.CoreCompileInputs.cache
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\obj\Release\CollegeManagement.Infrastructure.csproj.CopyComplete
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\obj\Release\CollegeManagement.Infrastructure.dll
+E:\Projects\CollegeManagement\CollegeManagement.Infrastructure\obj\Release\CollegeManagement.Infrastructure.pdb

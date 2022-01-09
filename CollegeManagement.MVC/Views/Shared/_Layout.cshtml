@@ -1,0 +1,40 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    @RenderSection("head", required: false)
+</head>
+<body data-ng-controller="mainCtrl">
+    <div id="hideElements"></div>
+    @*Topbar*@
+    <div class="askauto-topbar">
+        @*<a href=@Url.Action("Index", "Home") class="pull-right">
+            <img class="askauto-logo" src="~/Content/Images/college.jpg">
+        </a>*@
+        <div class="ask-userbar pull-left">
+            <a href=@Url.Action("Index", "Home" ) class="ask-home" title="home"><i class="fa"></i></a>
+        </div>
+    </div>
+    @*MainSection*@
+    <div class="askauto-mainsection">
+        <div class="askauto-mainrow">
+            @*Maincontent*@
+            <div class="askauto-maincontent">
+                <div class="container-fluid no-padding">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/angular.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/util.js"></script>
+</body>
+</html>

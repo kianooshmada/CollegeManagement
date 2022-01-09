@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "College Management";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+</style>
+<div class="">    
+    <div class="row">
+        <div id="phNewsManagement" class="col-lg-3">
+            <div class="askiran-block type2">
+                <div class="askiran-block-title"><i class="fa report"></i>Course</div>
+                <div class="askiran-block-content dashboard-items2">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6"><a href="@Url.Action("List", "Course")" title="List"><div><img src="~/Content/Images/askiran-dash5.png" /></div><span>List</span></a></div>
+                        <div class="col-xs-6 col-sm-6"><a href=@Url.Action("Create", "Course") title="Create"><div><img src="~/Content/Images/askiran-dash3.png" /></div><span>Create</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="phNewsManagement" class="col-lg-3">
+            <div class="askiran-block type2">
+                <div class="askiran-block-title"><i class="fa report"></i>Subject</div>
+                <div class="askiran-block-content dashboard-items2">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6"><a href="@Url.Action("List", "Subject")" title="List"><div><img src="~/Content/Images/askiran-dash5.png" /></div><span>List</span></a></div>
+                        <div class="col-xs-6 col-sm-6"><a href=@Url.Action("Create", "Subject") title="Create"><div><img src="~/Content/Images/askiran-dash3.png" /></div><span>Create</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="phNewsManagement" class="col-lg-3">
+            <div class="askiran-block type2">
+                <div class="askiran-block-title"><i class="fa report"></i>Teacher</div>
+                <div class="askiran-block-content dashboard-items2">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6"><a href="@Url.Action("List", "Teacher")" title="List"><div><img src="~/Content/Images/askiran-dash5.png" /></div><span>List</span></a></div>
+                        <div class="col-xs-6 col-sm-6"><a href=@Url.Action("Create", "Teacher") title="Create"><div><img src="~/Content/Images/askiran-dash3.png" /></div><span>Create</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="phNewsManagement" class="col-lg-3">
+            <div class="askiran-block type2">
+                <div class="askiran-block-title"><i class="fa report"></i>Student</div>
+                <div class="askiran-block-content dashboard-items2">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6"><a href="@Url.Action("List", "Student")" title="List"><div><img src="~/Content/Images/askiran-dash5.png" /></div><span>List</span></a></div>
+                        <div class="col-xs-6 col-sm-6"><a href=@Url.Action("Create", "Student") title="Create"><div><img src="~/Content/Images/askiran-dash3.png" /></div><span>Create</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="phNewsManagement" class="col-lg-3">
+            <div class="askiran-block type2">
+                <div class="askiran-block-title"><i class="fa report"></i>Enrollement</div>
+                <div class="askiran-block-content dashboard-items2">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6"><a href="@Url.Action("List", "Enrollment")" title="List"><div><img src="~/Content/Images/askiran-dash5.png" /></div><span>List</span></a></div>
+                        <div class="col-xs-6 col-sm-6"><a href=@Url.Action("Create", "Enrollment") title="Create"><div><img src="~/Content/Images/askiran-dash3.png" /></div><span>Create</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="phNewsManagement" class="col-lg-3">
+            <div class="askiran-block type2">
+                <div class="askiran-block-title"><i class="fa report"></i>Reports</div>
+                <div class="askiran-block-content dashboard-items2">
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4"><a href="@Url.Action("CourseListReport", "Course")" title="GetStudentReport"><div><img src="~/Content/Images/askiran-dash5.png" /></div><span>Course</span></a></div>
+                        <div class="col-xs-4 col-sm-4"><a href="@Url.Action("SubjectListReport", "Subject")" title="GetStudentReport"><div><img src="~/Content/Images/askiran-dash5.png" /></div><span>Subject</span></a></div>
+                        <div class="col-xs-4 col-sm-4"><a href=@Url.Action("StudentListReport", "Student") title="GetStudentReport"><div><img src="~/Content/Images/askiran-dash5.png" /></div><span>Student</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

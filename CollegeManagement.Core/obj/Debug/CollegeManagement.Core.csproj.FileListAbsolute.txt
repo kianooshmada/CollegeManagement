@@ -1,0 +1,6 @@
+E:\Projects\CollegeManagement\CollegeManagement.Core\bin\Debug\CollegeManagement.Core.dll
+E:\Projects\CollegeManagement\CollegeManagement.Core\bin\Debug\CollegeManagement.Core.pdb
+E:\Projects\CollegeManagement\CollegeManagement.Core\obj\Debug\CollegeManagement.Core.csproj.CoreCompileInputs.cache
+E:\Projects\CollegeManagement\CollegeManagement.Core\obj\Debug\CollegeManagement.Core.dll
+E:\Projects\CollegeManagement\CollegeManagement.Core\obj\Debug\CollegeManagement.Core.pdb
+E:\Projects\CollegeManagement\CollegeManagement.Core\obj\Debug\CollegeManagement.Core.csprojAssemblyReference.cache

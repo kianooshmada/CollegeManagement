@@ -1,0 +1,54 @@
+﻿@model CollegeManagement.MVC.Models.vmCreateTeacher
+
+@{
+    ViewBag.Title = Model.PageTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="askiran-block">
+    <div class="askiran-block-title">
+        <i class="fa edit"></i>@Model.PageTitle
+        <a class="new-item-link" href=@Url.Action("List")>Teacher List<i class="fa"></i></a>
+    </div>
+    <div class="askiran-block-content">
+        @if (Model.SystemMessage != null)
+        {
+            @Html.Partial("Partials/_SystemMessage", Model.SystemMessage)
+        }
+        <form method="post" enctype="multipart/form-data">
+            <div class="control-row">
+                <label class="control-title" for="Teacher.SubjectID">Course</label>
+                <div class="item-control">
+                    @Html.DropDownListFor(m => m.Teacher.SubjectID,
+                                     new SelectList(Model.SubjectSelectListItem, "SubjectID", "SubjectName"),
+                                     "Choose Subject")
+                    @Html.ValidationMessage("SubjectID")
+                </div>
+            </div>
+            <div class="control-row">
+                <label class="control-title" for="Teacher_Name">Name<span class="ask-rq fa" title="necessary"></span></label>
+                <div class="item-control">
+                    @Html.TextBoxFor(m => m.Teacher.Name, new { @MaxLength = "16" })
+                    @Html.ValidationMessage("Name")
+                </div>
+            </div>
+            <div class="control-row">
+                <label class="control-title" for="Teacher_BirthDate">Birth Date<span class="ask-rq fa" title="necessary"></span></label>
+                <div class="item-control">
+                    @Html.TextBoxFor(m => m.Teacher.BirthDate, "{0:MM/dd/yyyy}");
+                    @Html.ValidationMessage("BirthDate")
+                </div>
+            </div>
+            <div class="control-row">
+                <label class="control-title" for="Teacher_Salary">Salary<span class="ask-rq fa" title="necessary"></span></label>
+                <div class="item-control">
+                    @Html.TextBoxFor(m => m.Teacher.Salary, new { @type = "number" })
+                    @Html.ValidationMessage("Salary")
+                </div>
+            </div>
+            <div class="control-row">
+                <input type="submit" ID="btn_save" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>

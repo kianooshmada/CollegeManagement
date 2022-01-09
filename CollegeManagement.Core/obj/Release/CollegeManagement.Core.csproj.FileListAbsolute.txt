@@ -1,0 +1,6 @@
+E:\Projects\CollegeManagement\CollegeManagement.Core\bin\Release\CollegeManagement.Core.dll
+E:\Projects\CollegeManagement\CollegeManagement.Core\bin\Release\CollegeManagement.Core.pdb
+E:\Projects\CollegeManagement\CollegeManagement.Core\obj\Release\CollegeManagement.Core.csprojAssemblyReference.cache
+E:\Projects\CollegeManagement\CollegeManagement.Core\obj\Release\CollegeManagement.Core.csproj.CoreCompileInputs.cache
+E:\Projects\CollegeManagement\CollegeManagement.Core\obj\Release\CollegeManagement.Core.dll
+E:\Projects\CollegeManagement\CollegeManagement.Core\obj\Release\CollegeManagement.Core.pdb

@@ -1,0 +1,63 @@
+﻿@model CollegeManagement.MVC.Models.vmEnrollmentDetails
+
+@{
+    ViewBag.Title = Model.PageTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="askiran-block">
+    <div class="askiran-block-title">
+        <i class="fa edit"></i>@Model.PageTitle
+        <a class="new-item-link" href=@Url.Action("List")>Enrollment List<i class="fa"></i></a>
+    </div>
+    <div class="askiran-block-content">
+        @if (Model.SystemMessage != null)
+        {
+            @Html.Partial("Partials/_SystemMessage", Model.SystemMessage)
+        }
+        <form method="post" enctype="multipart/form-data">
+            <div class="control-row">
+                <label class="control-title" for="Enrollment.SubjectID">Course</label>
+                <div class="item-control">
+                    @Html.DropDownListFor(m => m.Enrollment.SubjectID,
+                                     new SelectList(Model.SubjectSelectListItem, "SubjectID", "SubjectName"),
+                                     "Choose Subject")
+                    @Html.ValidationMessage("SubjectID")
+                </div>
+            </div>
+            <div class="control-row">
+                <label class="control-title" for="Enrollment.StudentID">Student</label>
+                <div class="item-control">
+                    @Html.DropDownListFor(m => m.Enrollment.StudentID,
+                                     new SelectList(Model.StudentSelectListItem, "StudentID", "Name"),
+                                     "Choose Student")
+                    @Html.ValidationMessage("SubjectID")
+                </div>
+            </div>
+            <div class="control-row">
+                <label class="control-title" for="Enrollment_RegistrationNumber">Registration Number<span class="ask-rq fa" title="necessary"></span></label>
+                <div class="item-control">
+                    @Html.TextBoxFor(m => m.Enrollment.RegistrationNumber)
+                    @Html.ValidationMessage("RegistrationNumber")
+                </div>
+            </div>
+            <div class="control-row">
+                <label class="control-title" for="Enrollment_RegistrationDate">Registration Date<span class="ask-rq fa" title="necessary"></span></label>
+                <div class="item-control">
+                    @Html.TextBoxFor(m => m.Enrollment.RegistrationDate, "{0:MM/dd/yyyy}");
+                    @Html.ValidationMessage("RegistrationDate")
+                </div>
+            </div>
+            <div class="control-row">
+                <label class="control-title" for="Enrollment_Grade">Grade<span class="ask-rq fa" title="necessary"></span></label>
+                <div class="item-control">
+                    @Html.TextBoxFor(m => m.Enrollment.Grade)
+                    @Html.ValidationMessage("Grade")
+                </div>
+            </div>
+            <div class="control-row">
+                <input type="submit" ID="btn_save" value="Update" />
+            </div>
+        </form>
+    </div>
+</div>

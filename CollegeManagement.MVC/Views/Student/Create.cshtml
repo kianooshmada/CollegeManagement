@@ -1,0 +1,38 @@
+﻿@model CollegeManagement.MVC.Models.vmCreateStudent
+
+@{
+    ViewBag.Title = Model.PageTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="askiran-block">
+    <div class="askiran-block-title">
+        <i class="fa edit"></i>@Model.PageTitle
+        <a class="new-item-link" href=@Url.Action("List")>Student List<i class="fa"></i></a>
+    </div>
+    <div class="askiran-block-content">
+        @if (Model.SystemMessage != null)
+        {
+            @Html.Partial("Partials/_SystemMessage", Model.SystemMessage)
+        }
+        <form method="post" enctype="multipart/form-data">
+            <div class="control-row">
+                <label class="control-title" for="Student_Name">Name<span class="ask-rq fa" title="necessary"></span></label>
+                <div class="item-control">
+                    @Html.TextBoxFor(m => m.Student.Name, new { @MaxLength = "16" })
+                    @Html.ValidationMessage("Name")
+                </div>
+            </div>
+            <div class="control-row">
+                <label class="control-title" for="Student_BirthDate">Birth Date<span class="ask-rq fa" title="necessary"></span></label>
+                <div class="item-control">
+                    @Html.TextBoxFor(m => m.Student.BirthDate, "{0:MM/dd/yyyy}")
+                    @Html.ValidationMessage("BirthDate")
+                </div>
+            </div>
+            <div class="control-row">
+                <input type="submit" ID="btn_save" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@model CollegeManagement.MVC.Models.vmCreateSubject
+
+@{
+    ViewBag.Title = Model.PageTitle;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="askiran-block">
+    <div class="askiran-block-title">
+        <i class="fa edit"></i>@Model.PageTitle
+        <a class="new-item-link" href=@Url.Action("List")>Subject List<i class="fa"></i></a>
+    </div>
+    <div class="askiran-block-content">
+        @if (Model.SystemMessage != null)
+        {
+            @Html.Partial("Partials/_SystemMessage", Model.SystemMessage)
+        }
+        <form method="post" enctype="multipart/form-data">
+            <div class="control-row">
+                <label class="control-title" for="Subject.CourseID">Course</label>
+                <div class="item-control">
+                    @Html.DropDownListFor(m => m.Subject.CourseID,
+                                     new SelectList(Model.CourseSelectListItem, "CourseID", "Name"),
+                                     "Choose Course")
+                    @Html.ValidationMessage("CourseID")
+                </div>
+            </div>
+            <div class="control-row">
+                <label class="control-title" for="Subject_Name">Name<span class="ask-rq fa" title="necessary"></span></label>
+                <div class="item-control">
+                    @Html.TextBoxFor(m => m.Subject.Name, new { @MaxLength = "16" })
+                    @Html.ValidationMessage("Name")
+                </div>
+            </div>
+            <div class="control-row">
+                <input type="submit" ID="btn_save" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>
